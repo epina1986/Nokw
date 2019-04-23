@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<title>NoLoSe</title>
+
+		<script type="text/javascript">
+			function loadInfo(myForm){
+				var selectMenu=myForm.Menu.selectedIndex
+				var menuUrl=myForm.Menu.options[selectMenu].value+".html"
+				window.location=menuUrl
+			}
+
+			document.write("Today's date is " + document.lastModified + ".");
+
+			var scrollingB = " #I love Durango and Sinaloa girls# "
+			var begP = 0
+			function BarS(){
+				document.msgForm.BarS.value=scrollingB.substring(begP,scrollingB.length)+scrollingB.substring(0,begP)
+				begP = begP + 1
+				if(begP > scrollingB.length){
+					begP = 0
+				}
+				window.setTimeout("BarS()",200)
+			}
+
+			function popP(){
+				open("formpop.html","notice-win","width=250,height=250")
+			}
+		</script>
+
+		<style type="text/css">
+			h1{
+				color: pink;
+			}
+
+			body{
+				background-color: orange;
+			}
+		</style>
+	</head>
+
+	<body onload="BarS(); popP();">
+		<h1>Mixteado</h1>
+		<form name="infoMenu" action=" ">
+			<select name="Menu" onchange="loadInfo(this.form)">
+				<option value="NoLoSabia">Select Something</option>
+				<option value="MIX">Algo</option>
+				<option value="javascriptP0">Mucho</option>
+			</select>
+		</form>
+		<br />
+
+		<form name="msgForm" action=" ">
+			<input type="text" name="BarS" size="25" />
+		</form>
+	</body>
+</html>
